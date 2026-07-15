@@ -1,0 +1,30 @@
+# Required by phase 1
+python-dotenv
+PyYAML
+
+# Required by phase 2 local recording
+sounddevice
+soundfile
+numpy
+
+# Required by ASR client; 16.x has a failed-handshake cleanup issue on this project
+websockets>=15,<16
+
+# Required by phase 4 LLM client interface
+openai
+
+# Required by phase 5 offline speaker labeling
+librosa
+scikit-learn
+scipy
+
+# Reserved for later HTTP integrations
+httpx
+
+# Phase 7 tests, evaluation, and quality gates
+pytest
+python-Levenshtein
+pre-commit
+ruff
+black
+isort

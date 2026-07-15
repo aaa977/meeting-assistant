@@ -1,0 +1,40 @@
+app:
+  name: "面向会议场景的实时语音转录与智能辅助系统"
+  version: "0.1.0"
+
+paths:
+  projects_root: "projects"
+  logs_root: "logs"
+
+logging:
+  level: "INFO"
+
+# 第二阶段本地录音使用以下配置。
+audio:
+  sample_rate: 16000
+  channels: 1
+  block_size: 3200
+
+# 第六阶段在线会议使用 WebSocket 地址和重连间隔。
+asr:
+  websocket_url: ""
+  block_size: 3200
+  reconnect_seconds: 3
+
+# 第六阶段配置完整时调用兼容 OpenAI 的 Chat API，否则回退 Dummy。
+llm:
+  base_url: ""
+  model: ""
+  assistant_interval_seconds: 30
+  summary_interval_seconds: 180
+
+# 第五阶段离线说话人标注使用以下配置。
+speaker:
+  max_speakers: 3
+  mfcc_n_mfcc: 13
+  cluster_threshold: 0.6
+
+# 第六阶段在线会议停止时保存原始 PCM 为 WAV。
+pipeline:
+  wav_save: true
+  wav_path_pattern: "%Y%m%d_%H%M%S.wav"

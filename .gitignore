@@ -1,0 +1,43 @@
+# 本地密钥与虚拟环境
+.env
+.venv/
+venv/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+
+# 编辑器配置
+.vscode/
+
+# 运行日志
+logs/*.log
+*.log
+
+# 后续阶段生成的原始录音
+*.wav
+*.WAV
+
+# 临时文件
+*.tmp
+*.temp
+*.bak
+~$*
+.DS_Store
+Thumbs.db
+
+# 测试、静态检查和发布产物
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+dist/
+
+# --------- meeting_assistant ---------
+.venv/
+dist/
+logs/
+projects/*/recordings/
+projects/*/assistant/
+projects/*/transcripts/*.md~
+.env
